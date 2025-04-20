@@ -1,15 +1,10 @@
 
 import React, { useState } from 'react';
-import { Sun, Moon, Mail } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import SocialIcon from './SocialIcon';
 import { useToast } from '@/hooks/use-toast';
 
-interface HeaderProps {
-  isDark: boolean;
-  toggleTheme: () => void;
-}
-
-const Header: React.FC<HeaderProps> = ({ isDark, toggleTheme }) => {
+const Header = () => {
   const [email] = useState('your.email@example.com');
   const { toast } = useToast();
   
@@ -46,14 +41,6 @@ const Header: React.FC<HeaderProps> = ({ isDark, toggleTheme }) => {
             <SocialIcon type="spotify" url="https://spotify.com" />
             <SocialIcon type="strava" url="https://strava.com" />
           </div>
-          
-          <button 
-            onClick={toggleTheme}
-            className="ml-2 p-1 rounded-md hover:bg-muted transition-colors"
-            aria-label="Toggle theme"
-          >
-            {isDark ? <Sun size={20} /> : <Moon size={20} />}
-          </button>
         </div>
       </div>
     </header>
