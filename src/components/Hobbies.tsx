@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Running, Music, MessageSquare, ChartLine } from 'lucide-react';
+import { Activity, Music, MessageSquare, ChartLine } from 'lucide-react';
 
 const Hobbies: React.FC = () => {
   return (
@@ -13,7 +13,7 @@ const Hobbies: React.FC = () => {
       {/* Running Section */}
       <div className="mb-10">
         <div className="flex items-center gap-2 mb-4">
-          <Running className="text-muted-foreground" size={20} />
+          <Activity className="text-muted-foreground" size={20} />
           <h3 className="text-xl font-bold">Running</h3>
         </div>
         
