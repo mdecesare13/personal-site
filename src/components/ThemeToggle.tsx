@@ -23,3 +23,4 @@ const ThemeToggle = ({ isDark = false, toggleTheme = () => {} }: ThemeToggleProp
 };
 
 export default ThemeToggle;
+
