@@ -1,10 +1,9 @@
-
 import React from 'react';
 import { Activity, Music, MessageSquare, ChartLine } from 'lucide-react';
 
 const Hobbies: React.FC = () => {
   return (
-    <section id="hobbies" className="py-12 animate-fade-in">
+    <section id="hobbies" className="py-6 animate-fade-in">
       <h2 className="section-title">Hobbies</h2>
       <p className="mb-8">
         When I'm not coding, here are some of the activities I enjoy.

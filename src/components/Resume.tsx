@@ -11,7 +11,7 @@ import popcornLogo from '../assets/popcornLogo.svg';
 
 const Resume: React.FC = () => {
   return (
-    <section id="resume" className="py-12 animate-fade-in">
+    <section id="resume" className="py-6 animate-fade-in">
       <h2 className="section-title">Resume</h2>
 
       {/* Experience Section */}

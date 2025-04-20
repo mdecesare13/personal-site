@@ -1,10 +1,9 @@
-
 import React from 'react';
 import { Github, ExternalLink } from 'lucide-react';
 
 const Projects: React.FC = () => {
   return (
-    <section id="projects" className="py-12 animate-fade-in">
+    <section id="projects" className="py-6 animate-fade-in">
       <h2 className="section-title">Projects</h2>
       <p className="mb-8">
         A curated collection of my work, experiments, and open-source projects across various domains and technologies.

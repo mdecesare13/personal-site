@@ -1,13 +1,16 @@
-
 import { useEffect } from 'react';
 import Resume from '../components/Resume';
 
 const ResumePage = () => {
   useEffect(() => {
-    document.title = 'Resume - Personal Site';
+    document.title = 'Resume - Matt DeCesare';
   }, []);
 
-  return <Resume />;
+  return (
+    <div className="mt-[-3rem]">
+      <Resume />
+    </div>
+  );
 };
 
 export default ResumePage;

@@ -1,13 +1,16 @@
-
 import { useEffect } from 'react';
 import Projects from '../components/Projects';
 
 const ProjectsPage = () => {
   useEffect(() => {
-    document.title = 'Projects - Personal Site';
+    document.title = 'Projects - Matt DeCesare';
   }, []);
 
-  return <Projects />;
+  return (
+    <div className="mt-[-3rem]">
+      <Projects />
+    </div>
+  );
 };
 
 export default ProjectsPage;
