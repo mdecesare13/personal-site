@@ -36,7 +36,7 @@ const Resume: React.FC = () => {
                 <div className="text-sm text-muted-foreground mb-2">Disney Streaming</div>
                 <div className="text-xs text-muted-foreground mb-4">August 2024 - Present</div>
                 <p className="text-sm">
-                  Currently orchestrating a massive email platform migration that'll save Disney $3M annually. I'm herding three engineering teams toward an April 2025 deadline while also sprinkling some ML magic into Disney+ marketing messages. Turns out Mickey's emails can be just as personalized as his meet-and-greets.
+                  Implementing ML-driven personalization for Disney+ marketing communications to enhance message relevance and customer engagement. Led build of an internal CRM platform, allowing us to migrate off of third parties and saving Disney $3.6M annually on third party contracts. 
                 </p>
               </div>
             </div>
@@ -56,7 +56,7 @@ const Resume: React.FC = () => {
                 <div className="text-sm text-muted-foreground mb-2">Disney Streaming</div>
                 <div className="text-xs text-muted-foreground mb-4">August 2022 – July 2024</div>
                 <p className="text-sm">
-                  Led a team of 30+ engineers who sent more notifications than there are stars in the sky (2B+ annually, to be exact). My proudest achievement? Rescuing 40,000 abandoned sign-ups with perfectly timed messages, generating $8M+ in revenue. Turns out people just need a gentle nudge to finish what they started—especially when it comes to streaming subscriptions.
+                  Directed a team of 30+ engineers responsible for delivering over 2B annual notifications across Disney's streaming platforms. Implemented a sign-up abandonment messaging strategy that successfully recovers 40,000 incomplete registrations per year, generating $8M+ in additional annual revenue through targeted, timely communications.
                 </p>
               </div>
             </div>
@@ -76,7 +76,7 @@ const Resume: React.FC = () => {
                 <div className="text-sm text-muted-foreground mb-2">American Express</div>
                 <div className="text-xs text-muted-foreground mb-4">August 2021 – August 2022</div>
                 <p className="text-sm">
-                  Managed a $15M SMS budget at Amex while modernizing their communications platform. I was essentially the text message whisperer, orchestrating 500M+ annual communications while reducing call center volume by 10%. If your phone buzzed about your Amex travel plans during this time, you're welcome for the heads-up.
+                  Managed a $15M SMS budget while modernizing American Express's communications platform. Implemented travel notification improvements that reduced call center volume by 10% and oversaw the delivery of 500M+ annual communications across 30+ markets, ensuring consistent message delivery and regulatory compliance.
                 </p>
               </div>
             </div>
@@ -104,7 +104,7 @@ const Resume: React.FC = () => {
               <h4 className="font-semibold">Popcorn Movie Selection App</h4>
               <div className="text-xs text-muted-foreground mb-4">October 2024 - Present</div>
               <p className="text-sm mb-4">
-                I'm building the solution to humanity's greatest challenge: choosing a movie with friends without sparking a civil war. Popcorn combines real-time voting with AI recommendations, so you can spend less time arguing and more time watching. It's democracy for movie night, powered by AWS, Databricks, and a touch of OpenAI magic.
+                Developing a collaborative movie selection application that streamlines group decision-making through a structured voting system enhanced by AI recommendations. The platform features real-time group lobbies and multi-phase preference collection to efficiently resolve the common challenge of group entertainment selection.
               </p>
               
               <div className="mt-4">
@@ -146,7 +146,7 @@ const Resume: React.FC = () => {
               <div className="text-sm text-muted-foreground mb-2">Bachelor of Science in Economics, Concentration in Statistics</div>
               <div className="text-xs text-muted-foreground mb-4">Class of 2021</div>
               <p className="text-sm">
-                Graduated with honors from Wharton, where I learned that statistics is just math with a better PR team. Balanced coursework with being a teaching assistant for Programming Languages & Techniques, where I discovered my talent for explaining complex concepts using pop culture references.
+                Graduated with honors from Wharton with a focus on statistical analysis and data science applications. Member of the Beta Gamma Sigma Honor Society, recognizing academic excellence in business studies. Completed rigorous coursework in data science, behavioral economics, and statistical analysis while serving as president of the Penn Sports Analytics Group.
               </p>
               
               <div className="mt-4">
@@ -173,7 +173,7 @@ const Resume: React.FC = () => {
 
         <div className="bg-card p-6 rounded-lg border border-border">
           <p className="text-sm mb-6">
-            I speak multiple languages—SQL, R, Python, and just enough HTML/CSS to be dangerous. My toolbox includes data powerhouses like Snowflake and Databricks, visualization tools that make numbers tell stories, and enough product management apps to make Jira notifications the soundtrack of my workday.
+            Proficient in multiple programming languages including SQL, R, Python, and HTML/CSS for web development. Experienced with data platforms such as Snowflake and Databricks, visualization tools for data analysis, and a comprehensive suite of product management applications to facilitate efficient workflow management and stakeholder communication.
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -218,9 +218,6 @@ const Resume: React.FC = () => {
         </div>
         
         <div className="bg-card p-6 rounded-lg border border-border">
-          <p className="text-sm mb-6">
-            I collect certifications like some people collect vinyl records—selectively and with purpose. My Databricks certification proves I can wrangle data lakes without drowning, while my expired SAFe certification reminds me that agility is more than just a framework.
-          </p>
           <div className="space-y-4">
             <div className="group flex items-center p-3 rounded-lg border border-border bg-background hover:border-primary transition-colors">
               <div className="w-8 h-8 mr-3 flex-shrink-0 flex items-center justify-center">
