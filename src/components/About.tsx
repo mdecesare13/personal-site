@@ -17,7 +17,7 @@ const About: React.FC = () => {
       <h3 className="text-lg font-medium mb-4">Couple bullets about me:</h3>
       <div className="space-y-2">
         <div className="bullet-point flex items-center gap-1">
-          <span>Currently automating messaging at Disney. Feel free to opt in for me if you haven't.</span>
+          <span>Currently building an internal messaging at Disney.</span>
           <a 
             href="https://privacychoices.thewaltdisneycompany.com/" 
             target="_blank" 
@@ -51,7 +51,7 @@ const About: React.FC = () => {
           </a>
         </div>
         <div className="bullet-point flex items-center gap-1">
-          <span>Wharton 2021 grad, foucsing on Data Sciencewith a little stats jockeying for the basketball team in there.</span>
+          <span>Wharton 2021 grad, focusing on Data Science.</span>
           <div className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md bg-secondary">
             <img 
               src={whartonLogo} 

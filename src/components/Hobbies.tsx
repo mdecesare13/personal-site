@@ -1,6 +1,6 @@
 import React from 'react';
 import { Activity, Music, MessageSquare, ChartLine } from 'lucide-react';
-import RunningChart from './RunningChart';
+import ActivityChart from './ActivityChart.tsx';
 
 const Hobbies: React.FC = () => {
   return (
@@ -10,16 +10,24 @@ const Hobbies: React.FC = () => {
       <div className="mb-10">
         <div className="flex items-center gap-2 mb-4">
           <Activity className="text-muted-foreground" size={20} />
-          <h3 className="text-xl font-bold">Running</h3>
+          <h3 className="text-xl font-bold">Runs & Rides</h3>
         </div>
         
         <div className="bg-card p-6 rounded-lg border border-border">
           <p className="mb-4">
-            I'm an avid runner who participates in various races throughout the year.
+            I do a lot of running and biking.
           </p>
           
           <h4 className="text-sm font-medium mb-2">Recent Races</h4>
           <div className="space-y-2 mb-6">
+            <div className="flex justify-between items-center">
+              <span className="text-sm">NYRR Brooklyn RUN 5k, May 2025</span>
+              <span className="text-xs text-muted-foreground">25:29</span>
+            </div>
+            <div className="flex justify-between items-center">
+              <span className="text-sm">NYRR Retro 4 Miler, April 2025</span>
+              <span className="text-xs text-muted-foreground">33:03</span>
+            </div>
             <div className="flex justify-between items-center">
               <span className="text-sm">St. Michael's Running Festival Half Marathon, May 2024</span>
               <span className="text-xs text-muted-foreground">2:04</span>
@@ -35,8 +43,8 @@ const Hobbies: React.FC = () => {
           </div>
           
           <div>
-            <h4 className="text-sm font-medium mb-2">Monthly Stats</h4>
-            <RunningChart />
+            <h4 className="text-sm font-medium mb-2">Recent Activity (21 Days)</h4>
+            <ActivityChart />
           </div>
         </div>
       </div>

@@ -8,6 +8,13 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
+    proxy: {
+      '/api/strava': {
+        target: 'https://www.strava.com/api/v3',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api\/strava/, '')
+      }
+    }
   },
   plugins: [
     react(),
