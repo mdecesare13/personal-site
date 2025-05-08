@@ -1,6 +1,7 @@
 import React from 'react';
 import { Activity, Music, MessageSquare, ChartLine } from 'lucide-react';
 import ActivityChart from './ActivityChart.tsx';
+import ArtistTable from './ArtistTable';
 
 const Hobbies: React.FC = () => {
   return (
@@ -43,7 +44,7 @@ const Hobbies: React.FC = () => {
           </div>
           
           <div>
-            <h4 className="text-sm font-medium mb-2">Recent Activity (21 Days)</h4>
+            <h4 className="text-sm font-medium mb-2">Recent Activity</h4>
             <ActivityChart />
           </div>
         </div>
@@ -58,33 +59,11 @@ const Hobbies: React.FC = () => {
         
         <div className="bg-card p-6 rounded-lg border border-border">
           <p className="mb-4">
-            Music has always been a huge part of my life. I enjoy a wide range of genres from indie rock to electronic.
+            I'm a big hip hop fan. I try to capitalize on being in NYC to see artists live when I can.
           </p>
-          
-          <h4 className="text-sm font-medium mb-2">Recent Concerts</h4>
-          <div className="space-y-2 mb-6">
-            <div className="flex justify-between items-center">
-              <span className="text-sm">The National</span>
-              <span className="text-xs text-muted-foreground">March 2023</span>
-            </div>
-            <div className="flex justify-between items-center">
-              <span className="text-sm">Bon Iver</span>
-              <span className="text-xs text-muted-foreground">January 2023</span>
-            </div>
-            <div className="flex justify-between items-center">
-              <span className="text-sm">LCD Soundsystem</span>
-              <span className="text-xs text-muted-foreground">November 2022</span>
-            </div>
-          </div>
-          
           <div>
-            <h4 className="text-sm font-medium mb-2">Top Artists</h4>
-            <div className="h-64 bg-muted rounded-lg flex items-center justify-center">
-              <div className="flex items-center gap-2">
-                <Music className="text-muted-foreground" />
-                <span className="text-sm text-muted-foreground">Spotify integration coming soon</span>
-              </div>
-            </div>
+            <h4 className="text-sm font-medium mb-2">My Top Artists</h4>
+            <ArtistTable />
           </div>
         </div>
       </div>
