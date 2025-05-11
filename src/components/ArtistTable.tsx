@@ -71,148 +71,150 @@ const ArtistTable: React.FC = () => {
 
   return (
     <div>
-      <div className="rounded-lg overflow-hidden" style={{ backgroundColor: SPOTIFY_DARK }}>
-        <div className="overflow-y-auto max-h-[500px] spotify-scrollbar">
-          <table className="w-full">
-            <thead className="sticky top-0" style={{ backgroundColor: SPOTIFY_GRAY }}>
-              <tr>
-                <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider" style={{ color: SPOTIFY_GREEN }}>Artist</th>
-                <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider" style={{ color: SPOTIFY_GREEN }}>Genres</th>
-                <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider" style={{ color: SPOTIFY_GREEN }}>Recent Listen</th>
-                <th className="px-4 py-3 text-right text-xs font-medium uppercase tracking-wider" style={{ color: SPOTIFY_GREEN }}></th>
-              </tr>
-            </thead>
-            <tbody className="divide-y" style={{ borderColor: SPOTIFY_LIGHT_GRAY }}>
-              {artists.map((artist) => (
-                <React.Fragment key={artist.id}>
-                  <tr 
-                    className={`cursor-pointer transition-colors`}
-                    style={{ 
-                      backgroundColor: expandedArtist === artist.id ? SPOTIFY_GRAY : SPOTIFY_DARK,
-                      color: '#fff'
-                    }}
-                    onClick={() => toggleExpand(artist.id)}
-                    onMouseEnter={(e) => {
-                      if (expandedArtist !== artist.id) {
-                        e.currentTarget.style.backgroundColor = SPOTIFY_GRAY;
-                      }
-                    }}
-                    onMouseLeave={(e) => {
-                      if (expandedArtist !== artist.id) {
-                        e.currentTarget.style.backgroundColor = SPOTIFY_DARK;
-                      }
-                    }}
-                  >
-                    <td className="px-4 py-3 whitespace-nowrap">
-                      <div className="flex items-center">
-                        <div className="h-10 w-10 flex-shrink-0 rounded overflow-hidden mr-3">
-                          <img 
-                            src={artist.images[0]?.url || '/placeholder-artist.png'} 
-                            alt={artist.name}
-                            className="h-full w-full object-cover"
-                          />
-                        </div>
-                        <div>
-                          <div className="text-sm font-medium">{artist.name}</div>
-                        </div>
-                      </div>
-                    </td>
-                    <td className="px-4 py-3 whitespace-nowrap">
-                      <div className="text-sm" style={{ color: SPOTIFY_TEXT }}>
-                        {artist.genres.slice(0, 2).join(', ')}
-                      </div>
-                    </td>
-                    <td className="px-4 py-3 whitespace-nowrap">
-                      {artist.recentTrack ? (
+      <div className="overflow-x-auto">
+        <div className="rounded-lg overflow-hidden" style={{ backgroundColor: SPOTIFY_DARK }}>
+          <div className="overflow-y-auto max-h-[500px] spotify-scrollbar">
+            <table className="w-full">
+              <thead className="sticky top-0" style={{ backgroundColor: SPOTIFY_GRAY }}>
+                <tr>
+                  <th className="px-3 sm:px-4 py-2 sm:py-3 text-left text-xs font-medium uppercase tracking-wider" style={{ color: SPOTIFY_GREEN }}>Artist</th>
+                  <th className="hidden sm:table-cell px-3 sm:px-4 py-2 sm:py-3 text-left text-xs font-medium uppercase tracking-wider" style={{ color: SPOTIFY_GREEN }}>Genres</th>
+                  <th className="hidden sm:table-cell px-3 sm:px-4 py-2 sm:py-3 text-left text-xs font-medium uppercase tracking-wider" style={{ color: SPOTIFY_GREEN }}>Top Track</th>
+                  <th className="px-3 sm:px-4 py-2 sm:py-3 text-right text-xs font-medium uppercase tracking-wider" style={{ color: SPOTIFY_GREEN }}></th>
+                </tr>
+              </thead>
+              <tbody className="divide-y" style={{ borderColor: SPOTIFY_LIGHT_GRAY }}>
+                {artists.map((artist) => (
+                  <React.Fragment key={artist.id}>
+                    <tr 
+                      className={`cursor-pointer transition-colors`}
+                      style={{ 
+                        backgroundColor: expandedArtist === artist.id ? SPOTIFY_GRAY : SPOTIFY_DARK,
+                        color: '#fff'
+                      }}
+                      onClick={() => toggleExpand(artist.id)}
+                      onMouseEnter={(e) => {
+                        if (expandedArtist !== artist.id) {
+                          e.currentTarget.style.backgroundColor = SPOTIFY_GRAY;
+                        }
+                      }}
+                      onMouseLeave={(e) => {
+                        if (expandedArtist !== artist.id) {
+                          e.currentTarget.style.backgroundColor = SPOTIFY_DARK;
+                        }
+                      }}
+                    >
+                      <td className="px-4 py-3 whitespace-nowrap">
                         <div className="flex items-center">
-                          <div className="h-8 w-8 flex-shrink-0 rounded overflow-hidden mr-2">
+                          <div className="h-10 w-10 flex-shrink-0 rounded overflow-hidden mr-3">
                             <img 
-                              src={artist.recentTrack.album.images[0]?.url || '/placeholder-album.png'} 
-                              alt={artist.recentTrack.album.name}
+                              src={artist.images[0]?.url || '/placeholder-artist.png'} 
+                              alt={artist.name}
                               className="h-full w-full object-cover"
                             />
                           </div>
-                          <div className="flex-grow min-w-0">
-                            <div className="text-sm font-medium truncate max-w-[150px]">{artist.recentTrack.name}</div>
+                          <div>
+                            <div className="text-sm font-medium">{artist.name}</div>
                           </div>
                         </div>
-                      ) : (
+                      </td>
+                      <td className="hidden sm:table-cell px-2 sm:px-4 py-3 whitespace-nowrap">
                         <div className="text-sm" style={{ color: SPOTIFY_TEXT }}>
-                          No recent tracks
+                          {artist.genres.slice(0, 2).join(', ')}
                         </div>
-                      )}
-                    </td>
-                    <td className="px-4 py-3 whitespace-nowrap text-right text-sm">
-                      <div className="flex items-center justify-end">
-                        <a 
-                          href={artist.external_urls.spotify} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          onClick={(e) => e.stopPropagation()}
-                          className="mr-2 transition-colors"
-                          style={{ color: SPOTIFY_TEXT }}
-                          onMouseEnter={(e) => e.currentTarget.style.color = SPOTIFY_GREEN}
-                          onMouseLeave={(e) => e.currentTarget.style.color = SPOTIFY_TEXT}
-                        >
-                          <ExternalLink size={16} />
-                        </a>
-                        {expandedArtist === artist.id ? (
-                          <ChevronUp size={16} style={{ color: SPOTIFY_TEXT }} />
-                        ) : (
-                          <ChevronDown size={16} style={{ color: SPOTIFY_TEXT }} />
-                        )}
-                      </div>
-                    </td>
-                  </tr>
-                  {expandedArtist === artist.id && (
-                    <tr>
-                      <td colSpan={4} className="px-4 py-2 w-full" style={{ backgroundColor: SPOTIFY_GRAY }}>
-                        <div className="text-xs font-medium uppercase mb-2 mt-1" style={{ color: SPOTIFY_TEXT }}>
-                          Top Tracks
-                        </div>
-                        <div className="space-y-2 pb-2">
-                          {artist.topTracks.length > 0 ? (
-                            artist.topTracks.map((track) => (
-                              <a 
-                                key={track.id}
-                                href={track.external_urls.spotify}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex items-center p-2 rounded transition-colors w-full"
-                                style={{ color: '#fff' }}
-                                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = SPOTIFY_LIGHT_GRAY}
-                                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
-                              >
-                                <div className="h-8 w-8 flex-shrink-0 rounded overflow-hidden mr-3">
-                                  <img 
-                                    src={track.album.images[0]?.url || '/placeholder-album.png'} 
-                                    alt={track.album.name}
-                                    className="h-full w-full object-cover"
-                                  />
-                                </div>
-                                <div className="flex-grow min-w-0">
-                                  <div className="text-sm font-medium truncate">{track.name}</div>
-                                  <div className="text-xs truncate" style={{ color: SPOTIFY_TEXT }}>{track.album.name}</div>
-                                </div>
-                                <div className="flex items-center text-xs ml-3" style={{ color: SPOTIFY_TEXT }}>
-                                  <Clock size={12} className="mr-1" />
-                                  {formatDuration(track.duration_ms)}
-                                </div>
-                              </a>
-                            ))
-                          ) : (
-                            <div className="text-sm py-2" style={{ color: SPOTIFY_TEXT }}>
-                              No tracks found for this artist in your listening history.
+                      </td>
+                      <td className="hidden sm:table-cell px-4 py-3 whitespace-nowrap">
+                        {artist.recentTrack ? (
+                          <div className="flex items-center">
+                            <div className="h-8 w-8 flex-shrink-0 rounded overflow-hidden mr-2">
+                              <img 
+                                src={artist.recentTrack.album.images[0]?.url || '/placeholder-album.png'} 
+                                alt={artist.recentTrack.album.name}
+                                className="h-full w-full object-cover"
+                              />
                             </div>
+                            <div className="flex-grow min-w-0">
+                              <div className="text-sm font-medium truncate max-w-[150px]">{artist.recentTrack.name}</div>
+                            </div>
+                          </div>
+                        ) : (
+                          <div className="text-sm" style={{ color: SPOTIFY_TEXT }}>
+                            No recent tracks
+                          </div>
+                        )}
+                      </td>
+                      <td className="px-4 py-3 whitespace-nowrap text-right text-sm">
+                        <div className="flex items-center justify-end">
+                          <a 
+                            href={artist.external_urls.spotify} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            onClick={(e) => e.stopPropagation()}
+                            className="mr-2 transition-colors"
+                            style={{ color: SPOTIFY_TEXT }}
+                            onMouseEnter={(e) => e.currentTarget.style.color = SPOTIFY_GREEN}
+                            onMouseLeave={(e) => e.currentTarget.style.color = SPOTIFY_TEXT}
+                          >
+                            <ExternalLink size={16} />
+                          </a>
+                          {expandedArtist === artist.id ? (
+                            <ChevronUp size={16} style={{ color: SPOTIFY_TEXT }} />
+                          ) : (
+                            <ChevronDown size={16} style={{ color: SPOTIFY_TEXT }} />
                           )}
                         </div>
                       </td>
                     </tr>
-                  )}
-                </React.Fragment>
-              ))}
-            </tbody>
-          </table>
+                    {expandedArtist === artist.id && (
+                      <tr>
+                        <td colSpan={4} className="px-4 py-2 w-full" style={{ backgroundColor: SPOTIFY_GRAY }}>
+                          <div className="text-xs font-medium uppercase mb-2 mt-1" style={{ color: SPOTIFY_TEXT }}>
+                            Top Tracks
+                          </div>
+                          <div className="space-y-2 pb-2">
+                            {artist.topTracks.length > 0 ? (
+                              artist.topTracks.map((track) => (
+                                <a 
+                                  key={track.id}
+                                  href={track.external_urls.spotify}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="flex items-center p-2 rounded transition-colors w-full"
+                                  style={{ color: '#fff' }}
+                                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = SPOTIFY_LIGHT_GRAY}
+                                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
+                                >
+                                  <div className="h-8 w-8 flex-shrink-0 rounded overflow-hidden mr-3">
+                                    <img 
+                                      src={track.album.images[0]?.url || '/placeholder-album.png'} 
+                                      alt={track.album.name}
+                                      className="h-full w-full object-cover"
+                                    />
+                                  </div>
+                                  <div className="flex-grow min-w-0">
+                                    <div className="text-sm font-medium truncate">{track.name}</div>
+                                    <div className="text-xs truncate" style={{ color: SPOTIFY_TEXT }}>{track.album.name}</div>
+                                  </div>
+                                  <div className="flex items-center text-xs ml-3" style={{ color: SPOTIFY_TEXT }}>
+                                    <Clock size={12} className="mr-1" />
+                                    {formatDuration(track.duration_ms)}
+                                  </div>
+                                </a>
+                              ))
+                            ) : (
+                              <div className="text-sm py-2" style={{ color: SPOTIFY_TEXT }}>
+                                No tracks found for this artist in your listening history.
+                              </div>
+                            )}
+                          </div>
+                        </td>
+                      </tr>
+                    )}
+                  </React.Fragment>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
       <div className="flex justify-end mt-2">

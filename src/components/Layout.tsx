@@ -1,9 +1,7 @@
-
 import { useState, useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 import Header from './Header';
 import Navigation from './Navigation';
-import ThemeToggle from './ThemeToggle';
 
 const Layout = () => {
   const [isDark, setIsDark] = useState(
@@ -29,10 +27,9 @@ const Layout = () => {
     <div className="min-h-screen bg-background text-foreground">
       <Header />
       <Navigation />
-      <main className="container max-w-4xl mx-auto px-4 pt-36 pb-20">
+      <main className="container max-w-4xl mx-auto px-4 pt-28 sm:pt-36 pb-16 sm:pb-20">
         <Outlet />
       </main>
-      <ThemeToggle isDark={isDark} toggleTheme={toggleTheme} />
     </div>
   );
 };

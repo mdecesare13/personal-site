@@ -17,7 +17,7 @@ const About: React.FC = () => {
       <h3 className="text-lg font-medium mb-4">Couple bullets about me:</h3>
       <div className="space-y-2">
         <div className="bullet-point flex items-center gap-1">
-          <span>Currently building an internal messaging at Disney.</span>
+          <span>Currently building an internal messaging platform at Disney.</span>
           <a 
             href="https://privacychoices.thewaltdisneycompany.com/" 
             target="_blank" 
@@ -60,14 +60,8 @@ const About: React.FC = () => {
             />
           </div>
         </div>
-        <div className="bullet-point">
-          Really excited about the future of the profession given the AI tooling available to us. Outside of work, I'll be sharpening my skills with personal projects, which I can promise you were all built with a PRD and Cursor.
-        </div>
-        <div className="bullet-point">
-          This site included.
-        </div>
         <div className="bullet-point flex items-center gap-1">
-          <span>Otherwise I am training for the NYC Marathon, listening to music, or watching the 76ers flop.</span>
+          <span>Outside of work and side projects I am training for the NYC Marathon, listening to music, or watching the 76ers flop.</span>
           <a 
             href="https://www.strava.com/athletes/103969292" 
             target="_blank" 

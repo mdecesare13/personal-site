@@ -64,6 +64,22 @@
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
   }
+
+  h1 {
+    @apply text-2xl sm:text-3xl md:text-4xl;
+  }
+  
+  h2 {
+    @apply text-xl sm:text-2xl md:text-3xl;
+  }
+  
+  .section-title {
+    @apply text-xl sm:text-2xl font-bold mb-4 sm:mb-6;
+  }
+  
+  .subsection-title {
+    @apply text-lg sm:text-xl font-bold mb-3 sm:mb-4 mt-6 sm:mt-8;
+  }
 }
 
 @layer base {
@@ -97,7 +113,7 @@
 }
 
 .nav-pill {
-  @apply bg-secondary px-6 py-3 rounded-full text-sm font-medium transition-all duration-300;
+  @apply bg-secondary px-4 sm:px-6 py-2 sm:py-3 rounded-full text-sm font-medium transition-all duration-300;
 }
 
 .nav-pill.active {
@@ -111,14 +127,6 @@
 .bullet-point:before {
   content: "•";
   @apply text-muted-foreground font-bold;
-}
-
-.section-title {
-  @apply text-2xl font-bold mb-6;
-}
-
-.subsection-title {
-  @apply text-xl font-bold mb-4 mt-8;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -154,4 +162,14 @@
 .spotify-scrollbar {
   scrollbar-width: thin;
   scrollbar-color: rgba(83, 83, 83, 0.5) transparent;
+}
+
+/* Modify the tap targets to be less aggressive */
+button.btn, a.btn {
+  @apply min-h-[44px] min-w-[44px] flex items-center justify-center;
+}
+
+/* Remove the min-height/width from other elements */
+p a, span a, td a, .nav-pill {
+  @apply inline min-h-0 min-w-0;
 }
