@@ -19,7 +19,16 @@ const Header = () => {
     <header className="w-full fixed top-0 left-0 right-0 bg-background/90 backdrop-blur-sm z-50 py-4 border-b border-border">
       <div className="container max-w-4xl mx-auto px-4 flex items-center justify-between">
         <div className="flex items-center gap-4">
-          <h1 className="text-lg font-semibold">Matt DeCesare</h1>
+          <div>
+            <h1 className="text-lg font-semibold">Matt DeCesare</h1>
+            <button 
+              onClick={copyEmail}
+              className="md:hidden text-xs text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1"
+            >
+              <Mail size={12} className="inline" />
+              <span>{email}</span>
+            </button>
+          </div>
           <div className="hidden md:flex items-center text-sm text-muted-foreground">
             <button 
               onClick={copyEmail}
