@@ -17,6 +17,7 @@ export interface StravaActivity {
   total_elevation_gain: number;
   type: string;
   start_date: string;
+  start_date_local: string;
   average_speed: number;
   max_speed: number;
 }
@@ -127,15 +128,17 @@ export const getDailyActivityStats = async (): Promise<DailyActivityStats[]> => 
   
   // Initialize all days in the past 21 days
   for (let i = 0; i < 21; i++) {
-    const date = new Date();
-    date.setDate(date.getDate() - i);
-    const dateKey = date.toISOString().split('T')[0];
-    dailyStats[dateKey] = { running: 0, biking: 0, swimming: 0, hiking: 0 };
+    // Get today's date and subtract i days
+    const today = new Date();
+    const date = new Date(today.getFullYear(), today.getMonth(), today.getDate() - i);
+    const dateStr = date.toISOString().split('T')[0];
+    dailyStats[dateStr] = { running: 0, biking: 0, swimming: 0, hiking: 0 };
   }
   
   // Add activity data
   activities.forEach(activity => {
-    const dateKey = activity.start_date.split('T')[0];
+    // Just take the date portion of start_date_local (YYYY-MM-DD)
+    const dateKey = activity.start_date_local.substring(0, 10);
     
     // Skip if the date is not in our 21-day window
     if (!dailyStats[dateKey]) return;

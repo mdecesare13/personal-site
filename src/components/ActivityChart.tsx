@@ -29,8 +29,10 @@ const ActivityChart: React.FC = () => {
   }, []);
 
   const formatDate = (dateStr: string) => {
-    const date = new Date(dateStr);
-    return date.toLocaleDateString(undefined, { month: 'numeric', day: 'numeric' });
+    // Parse the date parts directly from the YYYY-MM-DD string
+    const [year, month, day] = dateStr.split('-').map(Number);
+    // Create date using local components to avoid timezone issues
+    return `${month}/${day}`;
   };
 
   // Update the chart styling to use the system font stack
@@ -87,6 +89,13 @@ const ActivityChart: React.FC = () => {
       </div>
     );
   }
+
+  // Helper function to format tooltip date
+  const formatTooltipDate = (dateStr: string) => {
+    // Parse the date parts directly from the YYYY-MM-DD string
+    const [year, month, day] = dateStr.split('-').map(Number);
+    return `${month}/${day}/${year}`;
+  };
 
   return (
     <div className="h-64 bg-black rounded-lg p-2 relative">
@@ -152,7 +161,7 @@ const ActivityChart: React.FC = () => {
                   color: chartStyles.colors.text 
                 }}>
                   <p style={{ margin: '0 0 5px', fontSize: '12px' }}>
-                    Date: {new Date(label).toLocaleDateString()}
+                    Date: {formatTooltipDate(label)}
                   </p>
                   {filteredPayload.map((entry, index) => {
                     const activityNames = {
