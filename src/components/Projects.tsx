@@ -2,6 +2,8 @@ import React from 'react';
 import { Github, ExternalLink } from 'lucide-react';
 import popcornLogo from '../assets/popcornLogo.svg';
 import dianesLogo from '../assets/dianesLogo.svg';
+import stravaMcpLogo from '../assets/stravaMcpLogo.svg';
+import fanduelLogo from '../assets/fanduel.svg';
 
 const Projects: React.FC = () => {
   return (
@@ -129,14 +131,70 @@ const Projects: React.FC = () => {
         
         {/* Project 3 */}
         <div className="bg-card rounded-xl border border-border overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+          <div className="aspect-[16/9] bg-background flex items-center justify-center p-6 border-b border-border">
+            <img 
+              src={stravaMcpLogo} 
+              alt="Strava MCP Server" 
+              className="w-full h-full object-contain" 
+            />
+          </div>
+          
+          <div className="p-5">
+            <div className="flex justify-between items-start mb-3">
+              <h3 className="text-xl font-bold">Strava MCP Server</h3>
+              <div className="flex gap-2">
+                <a 
+                  href="https://github.com/mdecesare13/strava-mcp" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="p-1.5 rounded-full bg-secondary/30 hover:bg-secondary/50 transition-colors"
+                  aria-label="GitHub Repository"
+                >
+                  <Github size={16} />
+                </a>
+              </div>
+            </div>
+            
+            <p className="text-sm text-muted-foreground mb-4">
+              A Model Context Protocol (MCP) server that integrates Strava data for marathon coaching and training analysis. Enables Claude Desktop to access Strava activities and provide personalized running insights.
+            </p>
+            
+            <div className="flex flex-wrap gap-2">
+              <span className="px-2 py-1 bg-secondary/20 text-xs rounded-full">Python</span>
+              <span className="px-2 py-1 bg-secondary/20 text-xs rounded-full">MCP</span>
+              <span className="px-2 py-1 bg-secondary/20 text-xs rounded-full">Strava API</span>
+              <span className="px-2 py-1 bg-secondary/20 text-xs rounded-full">Claude Desktop</span>
+              <span className="px-2 py-1 bg-secondary/20 text-xs rounded-full">Marathon Training</span>
+            </div>
+          </div>
+        </div>
+        
+        {/* Project 4 */}
+        <div className="bg-card rounded-xl border border-border overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+          <div className="aspect-[16/9] bg-background flex items-center justify-center p-6 border-b border-border">
+            <img 
+              src={fanduelLogo} 
+              alt="Daily Fantasy Sports Optimizer" 
+              className="w-full h-full object-contain" 
+            />
+          </div>
+          
           <div className="p-5">
             <div className="mb-3">
               <h3 className="text-xl font-bold">Daily Fantasy Sports Optimizer</h3>
             </div>
             
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground mb-4">
               Collaborated with my brother to develop an optimization algorithm that generates optimal lineups for FanDuel's daily fantasy sports contests, maximizing potential returns based on player statistics and matchup data.
             </p>
+            
+            <div className="flex flex-wrap gap-2">
+              <span className="px-2 py-1 bg-secondary/20 text-xs rounded-full">Python</span>
+              <span className="px-2 py-1 bg-secondary/20 text-xs rounded-full">Optimization</span>
+              <span className="px-2 py-1 bg-secondary/20 text-xs rounded-full">Machine Learning</span>
+              <span className="px-2 py-1 bg-secondary/20 text-xs rounded-full">FanDuel API</span>
+              <span className="px-2 py-1 bg-secondary/20 text-xs rounded-full">Sports Analytics</span>
+            </div>
           </div>
         </div>
       </div>
